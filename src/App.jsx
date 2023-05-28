@@ -1,12 +1,12 @@
 import { useState } from "react";
 import "./App.css";
 import { Configuration, OpenAIApi } from "openai";
-import * as dotenv from 'hidden'
+import 'dotenv/config'
 dotenv.config()
-require('hidden').config()
+require('dotenv').config()
 const configuration = new Configuration({
   organization: "org-28gCQiWYhlAZyyy7rp2P5aAG",
-  apiKey: hidden.env.REACT_APP_API_KEY,
+  apiKey: process.env.REACT_APP_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 function App() {
