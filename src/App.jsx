@@ -1,9 +1,13 @@
 import { useState } from "react";
 import "./App.css";
 import { Configuration, OpenAIApi } from "openai";
+import * as dotenv from 'dotenv'
+dotenv.config()
+import express from 'express'
+require('dotenv').config()
 const configuration = new Configuration({
   organization: "org-28gCQiWYhlAZyyy7rp2P5aAG",
-  apiKey: "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",
+  apiKey: process.env.REACT_APP_API_KEY,
 });
 const openai = new OpenAIApi(configuration);
 function App() {
